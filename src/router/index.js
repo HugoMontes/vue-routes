@@ -23,6 +23,12 @@ const routes = [
     name: 'Services',
     component: () => import(/* webpackChunkName: "services" */ '../views/Services.vue')
   },
+  // Adicionar la ruta con parametros
+  {
+    path: '/fotos/:id',
+    name: 'fotos',
+    component: () => import(/* webpackChunkName: "fotos" */ '../views/Fotos.vue')
+  },
 ]
 
 const router = new VueRouter({
