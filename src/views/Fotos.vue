@@ -12,6 +12,11 @@
 
         <!-- 3) Invocar al componente -->
         <Fotografia></Fotografia>
+
+        <!-- 5) Adicionar los botones invocando a los metodos -->
+        <button @click="goHome">Home</button>
+        <button @click="anterior">Anterior</button>
+        <button @click="siguiente">Siguiente</button>
     </div>
 </template>
 
@@ -27,6 +32,24 @@ export default {
     data() {
         return {
             fotosArreglo: [1, 2, 3, 4] 
+        }
+    },
+    // 1) Crear los metodos para navegar mediante los botones
+    methods: {
+        // 2) Metodo para ir la pagina de inicio
+        goHome: function(){
+            // Metodo push de router recibe como argumento la ruta
+            this.$router.push('/');
+        },
+        // 3) Metodo para ir una pagina anterior
+        anterior: function(){
+            // Accedemos a una pagina anterior del historial
+            this.$router.go(-1);
+        },
+        // 4) Metodo para ir una pagina siguiente del historial
+        siguiente: function(){
+            // Accedemos la pagina siguiente del historial
+            this.$router.go(1);
         }
     }
 }
